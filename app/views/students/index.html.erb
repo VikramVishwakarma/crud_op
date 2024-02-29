@@ -1,14 +1,33 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Students</h1>
-
-<div id="students">
-  <% @students.each do |student| %>
-    <%= render student %>
-    <p>
-      <%= link_to "Show this student", student %>
-    </p>
-  <% end %>
+<style>
+div {
+    margin-right: 10px;
+}
+</style>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <p style="color: green;"><%= notice %></p>
+      <h1>Students</h1>
+      <%= link_to "Add new student", new_student_path, class: "btn btn-warning" %>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-md-12">
+      <div id="students">
+        <% @students.each do |student| %>
+          <div class="card mb-3">
+            <%= render student %>
+            <div class="card-footer d-flex">
+              <div>
+                <%= link_to "Edit", edit_student_path(student), class: "btn btn-primary mr-2" %>
+              </div>
+              <div>              
+              <%= button_to "Delete", student, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %></div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
-
-<%= link_to "New student", new_student_path %>
