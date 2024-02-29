@@ -1,22 +1,22 @@
-<div id="<%= dom_id student %>">
-  <p>
-    <strong>Name:</strong>
-    <%= student.name %>
-  </p>
-
-  <p>
-    <strong>Email:</strong>
-    <%= student.email %>
-  </p>
-
-  <p>
-    <strong>Phone:</strong>
-    <%= student.phone %>
-  </p>
-
-  <p>
-    <strong>Address:</strong>
-    <%= student.address %>
-  </p>
-
+<div class="container">
+  <table class="table table-bordered">
+    <tbody>
+      <tr>
+        <th>Name</th>
+        <td><%= student.name %></td>
+      </tr>
+      <tr>
+        <th>Email</th>
+        <td><%= student.email %></td>
+      </tr>
+      <tr>
+        <th>Phone</th>
+        <td><%= student.phone %></td>
+      </tr>
+      <tr>
+        <th>Address</th>
+        <td><%= student.address %></td>
+      </tr>
+    </tbody>
+  </table>
 </div>
